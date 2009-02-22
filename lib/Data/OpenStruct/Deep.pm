@@ -1,12 +1,12 @@
 package Data::OpenStruct::Deep;
 
-use 5.8.1;
+use 5.008001;
 use strict;
 use warnings;
 use Storable ();
 use Want ();
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 sub new {
     my $class  = shift;
