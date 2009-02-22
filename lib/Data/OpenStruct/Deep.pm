@@ -6,7 +6,7 @@ use warnings;
 use Storable ();
 use Want ();
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 sub new {
     my $class  = shift;
@@ -26,7 +26,7 @@ sub AUTOLOAD {
     my ($method) = $AUTOLOAD =~ /([^:]+)$/;
     return if $method eq 'DESTROY';
 
-    if (Want::want('OBJECT')) {
+    if (Want::want('OBJECT', 'SCALAR')) {
         # method chain
         push @{ $self->{__stack} }, $method;
         return $self;
